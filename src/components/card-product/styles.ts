@@ -1,15 +1,25 @@
 import styled from "styled-components";
 
 
+export const Container = styled.section`
+    width: 1080px;
+`;
+
 export const CardWrapper = styled.article`
     display: flex;
     align-items: center;
+    border-radius: 4px;
     justify-content: center;
     flex-direction: column;
     background-color: #fff;
+    margin: 20px 0;
     padding: 16px;
-    width: 338.67px;
+    width: 90%;
     height: 324px;
+
+    @media (min-width: 768px){
+        width: 338.67px;
+    }
 `;
 
 export const H2 = styled.span`
