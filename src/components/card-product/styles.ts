@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-
-export const Container = styled.section`
-    width: 1080px;
-`;
-
 export const CardWrapper = styled.article`
     display: flex;
     align-items: center;
