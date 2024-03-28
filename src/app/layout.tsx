@@ -3,8 +3,8 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
-  title: "WeFit Commerce",
-  description: "E-commerce",
+  title: "WeMovies",
+  description: "Movie E-commerce by WeFit",
 };
 
 export default function RootLayout({
