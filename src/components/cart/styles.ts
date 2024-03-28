@@ -6,6 +6,10 @@ export const MyCart = styled.p`
     font-weight: 600;
     line-height: 19.07px;
     font-size: 14px;
+
+    @media (max-width: 600px){
+        display: none;
+    }
 `;
 
 export const Counter = styled.p`
