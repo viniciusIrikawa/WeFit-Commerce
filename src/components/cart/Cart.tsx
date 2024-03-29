@@ -5,7 +5,7 @@ const Cart = () => {
   return (
     <div>
         <div>
-            <MyCart> Meu Carrinho </MyCart>
+            <MyCart href='/cart'> Meu Carrinho </MyCart>
             <Counter> 0 itens </Counter>
         </div>
         {/* <div> icon </div> */}

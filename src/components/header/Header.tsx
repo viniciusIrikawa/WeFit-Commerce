@@ -6,7 +6,7 @@ import { HeaderWrapper, WebsiteName } from './styles'
 const Header = () => {
   return (
     <HeaderWrapper>
-      <WebsiteName> WeMovies</WebsiteName>
+      <WebsiteName href='/'> WeMovies</WebsiteName>
       <div>
         <Cart/>
       </div>

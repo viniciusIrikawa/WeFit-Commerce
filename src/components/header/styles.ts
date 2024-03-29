@@ -13,9 +13,10 @@ export const HeaderWrapper = styled.header`
     }
 `;
 
-export const WebsiteName = styled.span`
+export const WebsiteName = styled.a`
     color: #fff;
     font-family: sans-serif;
     font-weight: 700;
     line-height: 27.24px;
+    text-decoration: none;
 `;
