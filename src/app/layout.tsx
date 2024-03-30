@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/header/Header";
-
+import { ProductsProvider } from "@/Context/ContextProducts";
 
 export const metadata: Metadata = {
   title: "WeMovies",
@@ -16,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header/>
-        {children}
+        <ProductsProvider>
+          <Header/>
+          {children}
+        </ProductsProvider>
       </body>
     </html>
   );
