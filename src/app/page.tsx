@@ -20,7 +20,10 @@ export default function Home() {
   return (
     <main>
       <SearchBar/>
-      <CardProduct/>
+      {products.map(item=> (
+        <CardProduct key={item.id} image={item.image} price={item.price} title={item.title}/>
+
+      ))}
     </main>
   );
 }
