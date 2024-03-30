@@ -1,15 +1,15 @@
 'use client';
 import CardProduct from "@/components/card-product/CardProduct";
 import SearchBar from "@/components/search-bar/SearchBar";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getProducts } from '../services/products/products'
-import { IProduct } from "@/@Types/product";
 import { ProductsContainer } from './styles';
 import Spinner from "@/components/spinner/Spinner";
+import { ProductContext } from "@/Context/ContextProducts";
 
 export default function Home() {
-  const [products, setProducts] = useState<IProduct[]>([]);
   const [loading, setLoading] = useState<Boolean>(false);
+  const { products, setProducts } = useContext(ProductContext);
 
   const getData = async () => {
     try {
