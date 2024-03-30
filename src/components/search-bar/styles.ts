@@ -6,7 +6,7 @@ export const InputBar = styled.input`
     border: 2px;
     padding: 16px;
     width: 90%;
-    height: 56px;
+    height: 30px;
 
     @media (min-width: 768px){
         width: 1048px;
