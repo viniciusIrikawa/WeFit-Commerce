@@ -33,8 +33,8 @@ export default function Home() {
       <ProductsContainer>
         {loading ? ( 
           <Spinner/> 
-        ) : products.map(item=> (
-          <CardProduct key={item.id} image={item.image} price={item.price} title={item.title}/>
+        ) : products.map(item => (
+          <CardProduct key={item.id} items={item}/>
         ))}
       </ProductsContainer>
     </main>
