@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+export const CartWrapper = styled.section`
+    display: flex;
+    align-items: center;
+`;
+
+export const ImageWrapper = styled.div`
+    margin-left: 10px;
+`;
+
 export const MyCart = styled.a`
     color: #fff;
     font-family: sans-serif;
