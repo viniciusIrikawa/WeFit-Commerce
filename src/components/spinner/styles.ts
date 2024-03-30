@@ -12,5 +12,8 @@ const spin = keyframes`
 export const SpinnerWrapper = styled.div`
     display: inline-block;
     animation: ${spin} 1s linear infinite; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
 `;
 
