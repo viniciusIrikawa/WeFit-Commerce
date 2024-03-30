@@ -10,7 +10,7 @@ const CardProduct = ({ image, title, price }: IProduct) => {
     <CardWrapper>
       <Image src={image} alt='' width={147} height={188}/>
       <H2> {title} </H2>
-      <Price> {price} </Price>
+      <Price> R$ {price} </Price>
       <BtnAddToCart> Adicionar ao carrinho </BtnAddToCart>
     </CardWrapper>
   )

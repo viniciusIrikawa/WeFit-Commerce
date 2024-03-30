@@ -7,13 +7,13 @@ export const CardWrapper = styled.article`
     justify-content: center;
     flex-direction: column;
     background-color: #fff;
-    margin: 20px 0;
+    margin: 10px 0;
     padding: 16px;
     width: 90%;
     height: 324px;
 
     @media (min-width: 768px){
-        width: 338.67px;
+        width: 320px;
     }
 `;
 

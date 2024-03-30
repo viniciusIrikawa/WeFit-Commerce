@@ -4,6 +4,7 @@ import SearchBar from "@/components/search-bar/SearchBar";
 import { useEffect, useState } from "react";
 import { getProducts } from '../services/products/products'
 import { IProduct } from "@/@Types/product";
+import { ProductsContainer } from './styles';
 
 export default function Home() {
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -20,10 +21,11 @@ export default function Home() {
   return (
     <main>
       <SearchBar/>
-      {products.map(item=> (
-        <CardProduct key={item.id} image={item.image} price={item.price} title={item.title}/>
-
-      ))}
+      <ProductsContainer>
+        {products.map(item=> (
+          <CardProduct key={item.id} image={item.image} price={item.price} title={item.title}/>
+        ))}
+      </ProductsContainer>
     </main>
   );
 }
