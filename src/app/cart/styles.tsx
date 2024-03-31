@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export const CartContainer = styled.div`
@@ -74,7 +75,7 @@ export const Divisor = styled.hr`
     width: 100%;
 `;
 
-export const BtnCheckout = styled.button` 
+export const BtnCheckout = styled(Link)` 
     text-transform: uppercase;
     color: #fff;
     background-color: #009EDD;
@@ -86,6 +87,11 @@ export const BtnCheckout = styled.button`
     font-weight: 700;
     font-size: 12px;
     cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
 `;
     
 export const TotalWrapper = styled.div`

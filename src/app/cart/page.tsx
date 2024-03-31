@@ -73,7 +73,7 @@ const page = () => {
       </Table>
       <Divisor/>
       <TotalWrapper>
-        <BtnCheckout> Finalizar Pedido </BtnCheckout>
+        <BtnCheckout href={'/success'}> Finalizar Pedido </BtnCheckout>
         <div>
           <TxtTotal> Total </TxtTotal>
           <TotalPrice> R$ 29,99</TotalPrice>
