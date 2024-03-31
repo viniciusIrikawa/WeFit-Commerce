@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export const CartWrapper = styled.section`
@@ -9,7 +10,7 @@ export const ImageWrapper = styled.div`
     margin-left: 10px;
 `;
 
-export const MyCart = styled.a`
+export const MyCart = styled(Link)`
     color: #fff;
     font-family: sans-serif;
     font-weight: 600;

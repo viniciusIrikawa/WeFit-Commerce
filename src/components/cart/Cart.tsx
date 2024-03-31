@@ -1,3 +1,4 @@
+'use client';
 import React, { useContext } from 'react';
 import { ProductContext } from '../../Context/ContextProducts'
 import { CartWrapper, ImageWrapper, MyCart, Counter } from './styles';
@@ -9,8 +10,8 @@ const Cart = () => {
   return (
     <CartWrapper>
         <div>
-            <MyCart href='/cart'> Meu Carrinho </MyCart>
-            <Counter> {cartItems.length} itens </Counter>
+          <MyCart href={'/cart'}> Meu Carrinho </MyCart>
+          <Counter> {cartItems.length} itens </Counter>
         </div>
         <ImageWrapper>
           <Image src='/img/bag.png' alt='' width={24} height={20.57}/>

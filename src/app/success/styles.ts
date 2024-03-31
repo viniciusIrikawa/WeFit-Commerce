@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export const Container = styled.section` 
@@ -19,7 +20,7 @@ export const H1 = styled.h1`
     font-family: sans-serif;
 `;
 
-export const BtnBack = styled.a`
+export const BtnBack = styled(Link)`
     display: flex;
     justify-content: center;
     align-items: center;

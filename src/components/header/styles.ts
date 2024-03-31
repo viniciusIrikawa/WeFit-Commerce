@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export const HeaderWrapper = styled.header`
@@ -13,7 +14,7 @@ export const HeaderWrapper = styled.header`
     }
 `;
 
-export const WebsiteName = styled.a`
+export const WebsiteName = styled(Link)`
     color: #fff;
     font-family: sans-serif;
     font-weight: 700;
