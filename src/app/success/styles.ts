@@ -9,6 +9,12 @@ export const Container = styled.section`
     background-color: #fff;
     border-radius: 4px;
     height: 596px;
+    width: 90%;
+    padding: 24px;
+
+    @media (min-width: 768px){
+        width: 1048px;
+    }
 `;
 
 export const H1 = styled.h1` 

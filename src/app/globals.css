@@ -6,11 +6,11 @@
 body{
     background-color: #2F2E41;
     padding: 10px;
-}
-
-html {
     display: flex;  
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+html {
 }
