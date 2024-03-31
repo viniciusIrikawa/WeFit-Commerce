@@ -1,5 +1,4 @@
 'use client'
-import { CartItem } from "@/@Types/cartItem";
 import { IProduct } from "@/@Types/product";
 import React from "react";
 import { useState } from "react";
@@ -11,8 +10,8 @@ interface Children{
 interface ProductsContextProps{
     products: IProduct[];
     setProducts: (newProduct: IProduct[]) => void;
-    cartItems: CartItem[];
-    setCartItems: (newItem: CartItem[]) => void;
+    cartItems: IProduct[];
+    setCartItems: (newItem: IProduct[]) => void;
 }
 
 const initialValue:ProductsContextProps = {
@@ -25,7 +24,7 @@ const initialValue:ProductsContextProps = {
 export const ProductContext = React.createContext(initialValue);
 
 export const ProductsProvider = ({ children }:Children) => {
-    const [cartItems, setCartItems] = useState<CartItem[]>([]);
+    const [cartItems, setCartItems] = useState<IProduct[]>([]);
     const [products, setProducts] = useState<IProduct[]>([]);
 
     return(
