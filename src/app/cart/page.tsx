@@ -145,7 +145,7 @@ const page = () => {
         </TableMobile>
         <Divisor/>
         <TotalWrapper>
-          <BtnCheckout href={'/success'}> Finalizar Pedido </BtnCheckout>
+          <BtnCheckout href={'/success'} onClick={() => setCartItems([])}> Finalizar Pedido </BtnCheckout>
           <div>
             <TxtTotal> Total </TxtTotal>
             <TotalPrice> R$ {subTotalCart.toFixed(2)} </TotalPrice>
@@ -157,7 +157,7 @@ const page = () => {
             <TxtTotal> Total </TxtTotal>
             <TotalPrice> R$ {subTotalCart.toFixed(2)} </TotalPrice>
           </WrapperPriceMobile>
-          <BtnCheckout href={'/success'}> Finalizar Pedido </BtnCheckout>
+          <BtnCheckout href={'/success'} onClick={() => setCartItems([])}> Finalizar Pedido </BtnCheckout>
         </TotalWrapperMobile>
       </CartContainer>
 
