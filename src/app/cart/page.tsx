@@ -23,7 +23,20 @@ import { IProduct } from '@/@Types/product';
 import Image from 'next/image';
 
 const page = () => {
-  const { cartItems } = useContext(ProductContext);
+  const { cartItems, setCartItems } = useContext(ProductContext);
+  
+  const removeItem = (productID: number | undefined) => {
+    const items:IProduct[] = cartItems.filter(item => item.id !== productID);
+    setCartItems(items); 
+  };
+
+  const decrementQuantity = (productID: number | undefined) => {
+
+  };
+
+  const incrementQuantity = (productID: number | undefined) => {
+
+  };
 
   return (
     <CartContainer>
@@ -37,35 +50,35 @@ const page = () => {
           </tr>
         </thead>
         <tbody>
-          {cartItems.map((items: IProduct) => (
+          {cartItems.map((item: IProduct) => (
             <tr>
               <TableData> 
                 <ProductWrapper>
-                  <Image src={items.image} alt='' width={91} height={114}/> 
+                  <Image src={item.image} alt='' width={91} height={114}/> 
                   <TitlePriceWrapper>
                     <Title>
-                      {items.title}
+                      {item.title}
                     </Title>
                     <Price>
-                      R$ {items.price}
+                      R$ {item.price}
                     </Price>
                   </TitlePriceWrapper>
                 </ProductWrapper>
               </TableData>
               <TableData>
                 <QuantityWrapper>
-                  <BtnQuantity> 
+                  <BtnQuantity onClick={() => decrementQuantity(item.id)}> 
                     <Image src={'/img/btn_decrement.png'} alt='Decrement button' width={14} height={14}/>
                   </BtnQuantity>
-                  <Quantity value={2}/>
-                  <BtnQuantity> 
+                  <Quantity value={item.quantity}/>
+                  <BtnQuantity onClick={() => incrementQuantity(item.id)}> 
                     <Image src={'/img/btn_increment.png'} alt='Increment button' width={14} height={14}/>
                   </BtnQuantity>
                 </QuantityWrapper>
               </TableData>
               <TableData> Subtotal </TableData>
               <TableData>
-                <Image src={'/img/trash.png'} alt='Trash button' width={18} height={18}/>
+                <Image src={'/img/trash.png'} onClick={() => removeItem(item.id)} alt='Trash button' width={18} height={18}/>
               </TableData>
             </tr>
           ))}
