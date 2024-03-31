@@ -35,6 +35,10 @@ const page = () => {
   };
 
   const incrementQuantity = (productID: number | undefined) => {
+    const findItem: IProduct = cartItems.find(item => item.id === productID)!;
+
+    setCartItems(cartItems.map((item) => item.id === productID ? 
+      {...findItem, quantity: (findItem?.quantity || 0) + 1} : item));
 
   };
 
