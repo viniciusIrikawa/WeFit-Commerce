@@ -12,9 +12,16 @@ interface IProductProps{
 const CardProduct = ({ items }: IProductProps) => {
   const { cartItems, setCartItems } = useContext(ProductContext);
 
-  const addToCart = (items: IProduct) => {
-    // const itemExistsInCart = cartItems.filter((item: IProduct) => item.id === items.id);
-    setCartItems([...cartItems, items]);
+  const addToCart = (products: IProduct) => {
+    const itemExistsInCart = cartItems.find((item: IProduct) => item.id === products.id);
+
+    if(itemExistsInCart){
+      setCartItems(cartItems.map((item: IProduct) => item.id === products.id ? 
+      {...itemExistsInCart, quantity: (itemExistsInCart.quantity || 0) + 1 }: item));
+
+    }else{
+      setCartItems([...cartItems, {...items, quantity: 1}]);
+    }
   };
 
   return (
