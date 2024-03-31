@@ -4,7 +4,7 @@ export const CartContainer = styled.div`
     background-color: #fff;
     border-radius: 4px;
     min-height: 293px;
-    width: 100%;
+    width: 1048px;
     padding: 24px;
 `;
 
@@ -23,11 +23,54 @@ export const TableHeader = styled.th`
 
 export const TableData = styled.td`
     padding: 8px;
+    width: 300px;
+`;
+
+export const ProductWrapper = styled.div`
+    display: flex;
+`;
+
+export const TitlePriceWrapper = styled.div`
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 700;
+    font-family: sans-serif;
+    color: #2F2E41;
+`;
+
+export const QuantityWrapper = styled.div`
+    display: flex;
+`;
+    
+export const Title = styled.p`
+    font-size: 14px;
+    margin: 2px;
+`;
+
+export const BtnQuantity = styled.button`
+    border: none;
+    background: none;
+    cursor: pointer;
+`;
+
+export const Quantity = styled.input`
+    width: 40px;
+    text-align: center;
+    margin: 0 10px;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+    padding: 7px 10px;
+`;
+
+export const Price = styled.p`
+    font-size: 16px;
+    margin: 2px;
 `;
 
 export const Divisor = styled.hr`
     margin: 20px 0px;
-    height: 2px;
     width: 100%;
 `;
 
@@ -60,7 +103,7 @@ export const TxtTotal = styled.span`
     text-transform: uppercase;
 `;
 
-export const Price = styled.span`
+export const TotalPrice = styled.span`
     padding: 8px;
     font-weight: 700;
     font-family: sans-serif;
