@@ -1,5 +1,5 @@
 'use client'
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { 
   CartContainer, 
   Table, 
@@ -16,7 +16,10 @@ import {
   BtnCheckout, 
   TotalWrapper, 
   TxtTotal, 
-  TotalPrice 
+  TotalPrice, 
+  TableMobile,
+  TotalWrapperMobile,
+  WrapperPriceMobile
 } from './styles';
 import { ProductContext } from '@/Context/ContextProducts';
 import { IProduct } from '@/@Types/product';
@@ -100,6 +103,46 @@ const page = () => {
             })}
           </tbody>
         </Table>
+
+        <TableMobile>
+          <tbody>
+          {cartItems.map((item: IProduct) => {
+              subTotalCart += (item?.quantity ?? 0) * item?.price
+              return (  
+                <tr>
+                  <TableData> 
+                    <ProductWrapper>
+                      <Image src={item.image} alt='' width={64} height={80}/> 
+                      <TitlePriceWrapper>
+                        <Title>
+                          {item.title}
+                        </Title>
+                        <Price>
+                          R$ {item.price}
+                        </Price>
+                      </TitlePriceWrapper>
+                    </ProductWrapper>
+                  </TableData>
+                  <TableData>
+                    <QuantityWrapper>
+                      <BtnQuantity onClick={() => decrementQuantity(item.id)}> 
+                        <Image src={'/img/btn_decrement.png'} alt='Decrement button' width={14} height={14}/>
+                      </BtnQuantity>
+                      <Quantity value={item.quantity}/>
+                      <BtnQuantity onClick={() => incrementQuantity(item.id)}> 
+                        <Image src={'/img/btn_increment.png'} alt='Increment button' width={14} height={14}/>
+                      </BtnQuantity>
+                    </QuantityWrapper>
+                  </TableData>
+                  <TableData> {((item?.quantity ?? 0) * item?.price).toFixed(2)} </TableData>
+                  <TableData>
+                    <Image src={'/img/trash.png'} onClick={() => removeItem(item.id)} alt='Trash button' width={16} height={18}/>
+                  </TableData>
+                </tr>
+              )
+            })}
+          </tbody>
+        </TableMobile>
         <Divisor/>
         <TotalWrapper>
           <BtnCheckout href={'/success'}> Finalizar Pedido </BtnCheckout>
@@ -108,7 +151,16 @@ const page = () => {
             <TotalPrice> R$ {subTotalCart.toFixed(2)} </TotalPrice>
           </div>
         </TotalWrapper>
+
+        <TotalWrapperMobile>
+          <WrapperPriceMobile>
+            <TxtTotal> Total </TxtTotal>
+            <TotalPrice> R$ {subTotalCart.toFixed(2)} </TotalPrice>
+          </WrapperPriceMobile>
+          <BtnCheckout href={'/success'}> Finalizar Pedido </BtnCheckout>
+        </TotalWrapperMobile>
       </CartContainer>
+
     ): (
       <EmptyCart/>
     )

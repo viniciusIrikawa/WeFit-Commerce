@@ -5,13 +5,32 @@ export const CartContainer = styled.div`
     background-color: #fff;
     border-radius: 4px;
     min-height: 293px;
-    width: 1048px;
-    padding: 24px;
+    padding: 24px 5px;
+    
+    @media (min-width: 768px){
+        width: 1048px;
+        padding: 24px;
+    }
 `;
 
 export const Table = styled.table`
     height: 200px;
     width: 100%;
+    display: none;
+
+    @media (min-width: 768px){
+        display: table-cell;
+    }
+`;
+
+export const TableMobile = styled.table`
+    height: 200px;
+    width: 100%;
+    display: table-cell;
+
+    @media (min-width: 768px){
+        display: none;
+    }
 `;
 
 export const TableHeader = styled.th`
@@ -48,6 +67,7 @@ export const QuantityWrapper = styled.div`
 export const Title = styled.p`
     font-size: 14px;
     margin: 2px;
+    width: max-content;
 `;
 
 export const BtnQuantity = styled.button`
@@ -81,9 +101,9 @@ export const BtnCheckout = styled(Link)`
     background-color: #009EDD;
     border-radius: 4px;
     border: none;
-    width: 173px;
     height: 34px;
     padding: 8px;
+    margin-top: 20px;
     font-weight: 700;
     font-size: 12px;
     cursor: pointer;
@@ -92,12 +112,39 @@ export const BtnCheckout = styled(Link)`
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
+    
+    @media (min-width: 768px){
+        width: 173px;
+        margin-top: 0px;
+    }
 `;
     
 export const TotalWrapper = styled.div`
+    display: none;
+    @media (min-width: 768px){
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+`;
+    
+export const WrapperPriceMobile = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (min-width: 768px){
+        display: none;
+    }
+`;
+    
+export const TotalWrapperMobile = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 768px){
+        display: none;
+    }
 `;
     
 export const TxtTotal = styled.span`
