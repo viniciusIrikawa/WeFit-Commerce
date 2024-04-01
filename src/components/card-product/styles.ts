@@ -34,8 +34,8 @@ export const Price = styled.span`
     margin: 10px 0;
 `;
 
-export const BtnAddToCart = styled.button`
-    background-color: #009EDD;
+export const BtnAddToCart = styled.button<{ buttonColor: string}>`
+    background-color: ${(props) => props.buttonColor};
     border: none;
     cursor: pointer;
     width: 100%;
