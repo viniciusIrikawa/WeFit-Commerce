@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 
 export const CardWrapper = styled.article`
@@ -47,4 +48,11 @@ export const BtnAddToCart = styled.button`
     font-family: sans-serif;
     font-weight: 700;
     line-height: 16.34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const IconCart = styled(Image)`
+    margin-right: 5px;
 `;
