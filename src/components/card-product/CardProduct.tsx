@@ -24,12 +24,17 @@ const CardProduct = ({ items }: IProductProps) => {
     }
   };
 
+  const countQuantity = () => {
+    const productQuantity = cartItems.find(item => item.id === items.id);
+    return productQuantity?.quantity;
+  };
+
   return (
     <CardWrapper>
       <Image src={items.image} alt='' width={147} height={188}/>
       <H2> {items.title} </H2>
       <Price> R$ {items.price} </Price>
-      <BtnAddToCart onClick={() => addToCart(items)}> Adicionar ao carrinho </BtnAddToCart>
+      <BtnAddToCart onClick={() => addToCart(items)}> {countQuantity()} Adicionar ao carrinho </BtnAddToCart>
     </CardWrapper>
   )
 }
