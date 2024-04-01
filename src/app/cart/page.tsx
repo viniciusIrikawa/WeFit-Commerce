@@ -107,7 +107,6 @@ const page = () => {
         <TableMobile>
           <tbody>
           {cartItems.map((item: IProduct) => {
-              subTotalCart += (item?.quantity ?? 0) * item?.price
               return (  
                 <tr>
                   <TableData> 
@@ -134,7 +133,7 @@ const page = () => {
                       </BtnQuantity>
                     </QuantityWrapper>
                   </TableData>
-                  <TableData> {((item?.quantity ?? 0) * item?.price).toFixed(2)} </TableData>
+                  <TableData> R$ {((item?.quantity ?? 0) * item?.price).toFixed(2)} </TableData>
                   <TableData>
                     <Image src={'/img/trash.png'} onClick={() => removeItem(item.id)} alt='Trash button' width={16} height={18}/>
                   </TableData>
