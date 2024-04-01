@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import { ProductsProvider } from "@/Context/ContextProducts";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "WeMovies",
@@ -19,6 +20,7 @@ export default function RootLayout({
         <ProductsProvider>
           <Header/>
           {children}
+          <Toaster/>
         </ProductsProvider>
       </body>
     </html>
