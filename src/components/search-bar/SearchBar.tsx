@@ -22,7 +22,7 @@ const SearchBar = () => {
       if(response.data.length > 0) {
         setProducts(response.data);
       }else{
-        toast.error('Could not find the product.');
+        toast.error('Não foi possível encontrar o produto.');
         const allProducts = await getProducts();
         setProducts(allProducts);
       }
