@@ -44,6 +44,8 @@ export const TableHeader = styled.th`
 export const TableData = styled.td`
     padding: 8px;
     width: 300px;
+    font-weight: 700;
+    font-family: sans-serif;
 `;
 
 export const ProductWrapper = styled.div`

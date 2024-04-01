@@ -94,7 +94,7 @@ const page = () => {
                       </BtnQuantity>
                     </QuantityWrapper>
                   </TableData>
-                  <TableData> {((item?.quantity ?? 0) * item?.price).toFixed(2)} </TableData>
+                  <TableData> R$ {((item?.quantity ?? 0) * item?.price).toFixed(2)} </TableData>
                   <TableData>
                     <Image src={'/img/trash.png'} onClick={() => removeItem(item.id)} alt='Trash button' width={18} height={18}/>
                   </TableData>
